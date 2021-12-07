@@ -23,7 +23,7 @@ contract Ballot {
 
     Proposal[] public proposals;
 
-    constructor(bytes32[] memory proposalNames){
+    constructor(bytes32[] memory proposalNames)public{
         chairperson = msg.sender;
         voters[chairperson].weight = 1;
 
@@ -88,5 +88,5 @@ contract Ballot {
      function winnerName() public view returns (bytes32 winnerName_) {
         winnerName_ = proposals[winningProposal()].name;
     }
-}
+
 }
